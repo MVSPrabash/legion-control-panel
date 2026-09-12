@@ -58,7 +58,16 @@ int main() {
         ImGui_ImplGlfw_NewFrame();
         ImGui::NewFrame();
 
-        ImGui::Begin("Lenovo Legion Control Panel");
+        ImGui::SetNextWindowPos(ImVec2(0, 0));
+        ImGui::SetNextWindowSize(io.DisplaySize);
+
+        ImGui::Begin(
+            "Lenovo Legion Control Panel",
+            nullptr,
+            ImGuiWindowFlags_NoTitleBar |
+                ImGuiWindowFlags_NoResize |
+                ImGuiWindowFlags_NoMove
+        );
     
         ImGui::Text("System Status");
 
