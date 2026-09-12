@@ -7,12 +7,15 @@ set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(glfw3 REQUIRED)
+find_package(OpenGL REQUIRED)
 
 add_executable(legion-control-panel
     src/main.cpp
 )
 
 target_link_libraries(legion-control-panel
-    PRIVATE glfw
+    PRIVATE
+        glfw
+        OpenGL::GL
 )
 
